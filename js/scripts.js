@@ -128,7 +128,8 @@ function Pizza(size, crust) {
         sizeCalcPrice(pizzaSize) +
         crustCalcPrice(crust) +
         toppingsCalcPrice(toppingList);
-
+      var grandTotal =0;
+      grandTotal = grandTotal + oneOrder;
         $("#items").append(
 
             "<li> Pizza size: "  +newPizza.size + "<br> crust :"+newPizza.crust+"<br> toppings: " +newPizza.toppings+ "<br> Total price: "+oneOrder+ " rwf </li>"
@@ -141,8 +142,9 @@ function Pizza(size, crust) {
           var userPhone = $("#phn").val();
           $("#clientname").text(userName);
           $("#clientphone").text(userPhone);
-
           $("#checkoutslist").html($("#items").html());
+          $("#grandTot").text(grandTotal+" rwf");
+          $("#grandTot").show();
         });
         $("#delivers").click(function() {
           $(".addresses").show();
